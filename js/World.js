@@ -8,8 +8,8 @@ function(Konva, Ball){
 		init: function(){		
 		    this.stage = new Konva.Stage({
 		        container: 'worldContainer',
-		        width: 1000,
-		        height: 400
+		        width: window.innerWidth,
+		        height: window.innerHeight
 		    });
 		    this.layer = new Konva.Layer();
 		    this.stage.add(this.layer);
@@ -42,16 +42,6 @@ function(Konva, Ball){
 		        this.sounds[i] = new Audio("click0.ogg");
 		        this.sounds[i].volume = 0;
 		    }
-		    
-		    var that = this;
-		    var bar = new Konva.Line({
-		        stroke: 'black',
-		        strokeWidth: 15,
-		        points: [off-2*radius, h, off + n*2*(radius), h]
-		    });
-		    this.layer.add(bar);
-
-		    
 		},
 		playStep: function () {
 		    this.step();
